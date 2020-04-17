@@ -327,7 +327,7 @@ namespace TJAPlayer3
 				"\n" +
 				"Note: Exit CONFIGURATION to make\n" +
 				"     the setting take effect.",
-				new string[] { "DSound", "ASIO", "WASAPI" });
+				new string[] { "DSound", "ASIO", "Exclusive WASAPI", "Shared WASAPI" });
 			this.list項目リスト.Add(this.iSystemSoundType);
 
 			// #24820 2013.1.15 yyagi
@@ -1538,6 +1538,9 @@ namespace TJAPlayer3
 						break;
 					case 2:
 						soundDeviceType = ESoundDeviceType.ExclusiveWASAPI;
+						break;
+					case 3:
+						soundDeviceType = ESoundDeviceType.SharedWASAPI;
 						break;
 					default:
 						soundDeviceType = ESoundDeviceType.Unknown;
